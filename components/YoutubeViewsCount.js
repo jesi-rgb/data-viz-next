@@ -2,22 +2,39 @@ import useSWR from "swr";
 
 import fetcher from "@/lib/fetcher";
 
-export default function YoutubeViewsCount() {
-  const { data } = useSWR("/api/yt-video-plays", fetcher);
-  console.log(data);
+export default function YoutubeViewsCount({ videoData }) {
+  //   const { videoData } = useSWR("/api/yt-video-plays", fetcher);
 
-  if (!data) {
-    return null;
+  //   console.log(videoData);
+  if (!videoData) {
+    return (
+      <>
+        <h2>No results to display</h2>
+      </>
+    );
   }
 
-  var totalViews =
-    parseInt(data.viewCountCollatz) + parseInt(data.viewCountCubic);
-
-  var numStr = (totalViews / 1000000).toFixed(2) + "M";
+  let outputData = [];
+  videoData.items.map((v) => {
+    outputData.push({
+      title: v.snippet.title,
+      date: v.snippet.publishedAt,
+      viewCount: v.statistics.viewCount,
+      likeCount: v.statistics.likeCount,
+      commentCount: v.statistics.commentCount,
+    });
+  });
 
   return (
     <>
-      <span>{numStr}</span>
+      <ul>
+        {outputData.map((v) => {
+          <li>
+            <span>{v.title}</span>
+            <span>v.viewCount</span>
+          </li>;
+        })}
+      </ul>
     </>
   );
 }

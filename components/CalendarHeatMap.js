@@ -1,7 +1,5 @@
 import EChartsReact from "echarts-for-react";
 import React from "react";
-import useSWR from "swr";
-import fetcher from "@/lib/fetcher";
 import { countBy } from "lodash";
 const CalendarHeatMap = ({ data }) => {
   const [option, setOption] = React.useState({});
@@ -9,6 +7,7 @@ const CalendarHeatMap = ({ data }) => {
   let dates;
   let groups;
   let refinedData = [];
+
   if (data) {
     let tweets = data.data;
     dates = tweets.map((t) => new Date(t.created_at));
@@ -70,5 +69,3 @@ const CalendarHeatMap = ({ data }) => {
   );
 };
 export default CalendarHeatMap;
-
-export const getStaticProps = async () => {};
