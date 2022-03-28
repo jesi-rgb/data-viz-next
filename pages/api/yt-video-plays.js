@@ -6,5 +6,6 @@ export default async (_, res) => {
   let channelID = "UCK8XIGR5kRidIw2fWqwyHRA"; // for Reducible
   let videoData = await getVideoDataFromChannel(channelID);
 
+  console.log(videoData);
   return res.status(200).json(videoData);
 };

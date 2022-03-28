@@ -6,29 +6,29 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [tweets, setTweets] = useState();
-  //   const [youtubeData, setYoutubeData] = useState();
-
-  useEffect(() => {
-    const getData = async () => {
-      const response = await fetch("/api/tweets");
-      const data = await response.json();
-
-      setTweets(data.data);
-    };
-
-    getData();
-  }, []);
+  const [youtubeData, setYoutubeData] = useState();
 
   //   useEffect(() => {
   //     const getData = async () => {
-  //       const response = await fetch("/api/yt-video-plays");
+  //       const response = await fetch("/api/tweets");
   //       const data = await response.json();
 
-  //       setYoutubeData(data);
+  //       setTweets(data.data);
   //     };
 
   //     getData();
   //   }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch("/api/yt-video-plays");
+      const data = await response.json();
+
+      setYoutubeData(data);
+    };
+
+    getData();
+  }, []);
 
   return (
     <div className="container">
@@ -38,9 +38,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* {youtubeData && <YoutubeViewsCount data={youtubeData} />} */}
+      {youtubeData && <YoutubeViewsCount data={youtubeData} />}
 
-      {tweets && <CalendarHeatMap data={tweets} />}
+      {/* {tweets && <CalendarHeatMap data={tweets} />} */}
 
       <Footer />
     </div>

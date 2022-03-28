@@ -3,9 +3,6 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 
 export default function YoutubeViewsCount({ videoData }) {
-  //   const { videoData } = useSWR("/api/yt-video-plays", fetcher);
-
-  //   console.log(videoData);
   if (!videoData) {
     return (
       <>
