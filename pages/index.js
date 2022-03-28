@@ -13,7 +13,7 @@ export default function Home() {
       const response = await fetch("/api/tweets");
       const data = await response.json();
 
-      setTweets(data);
+      setTweets(data.data);
     };
 
     getData();
@@ -40,7 +40,6 @@ export default function Home() {
 
       {/* {youtubeData && <YoutubeViewsCount data={youtubeData} />} */}
 
-      {console.log("INDEX.JS", tweets)}
       {tweets && <CalendarHeatMap data={tweets} />}
 
       <Footer />

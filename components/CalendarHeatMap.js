@@ -6,6 +6,7 @@ const CalendarHeatMap = ({ data }) => {
   let dates;
   let groups;
 
+  console.log("HEAT MAP");
   console.log(data);
   dates = data.map((t) => new Date(t.created_at));
 

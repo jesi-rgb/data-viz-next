@@ -4,6 +4,6 @@ import { getTweetsFromUser } from "@/lib/twitter";
 export default async (_, res) => {
   const jrasconId = "449899511";
   const jesi_rgbId = "1341685272162033665";
-  const tweets = await getTweetsFromUser(jrasconId);
+  const tweets = await getTweetsFromUser(jesi_rgbId);
   return res.status(200).json(tweets);
 };
