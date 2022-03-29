@@ -8,7 +8,7 @@ export const Layout = ({ children }) => {
     <>
       <Meta />
       {/* <div className="md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto"> */}
-      <div className="mx-1 xl:mx-auto xl:max-w-4xl">
+      <div className="mx-5 md:mx-32 xl:mx-auto xl:max-w-4xl">
         <HeaderTW />
         {children}
         <Footer />
