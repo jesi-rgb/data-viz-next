@@ -1,8 +1,4 @@
-import useSWR from "swr";
-
-import fetcher from "@/lib/fetcher";
-
-export default function YoutubeViewsCount({ videoData }) {
+export default function YoutubeViewsCount(videoData) {
   if (!videoData) {
     return (
       <>
@@ -12,7 +8,7 @@ export default function YoutubeViewsCount({ videoData }) {
   }
 
   let outputData = [];
-  videoData.items.map((v) => {
+  videoData.data.items.map((v) => {
     outputData.push({
       title: v.snippet.title,
       date: v.snippet.publishedAt,
@@ -24,12 +20,15 @@ export default function YoutubeViewsCount({ videoData }) {
 
   return (
     <>
-      <ul>
+      <ul className="bg-slate-200 text-gray-600">
+        <h1>sup</h1>
+        {console.log(outputData)}
         {outputData.map((v) => {
-          <li>
-            <span>{v.title}</span>
-            <span>v.viewCount</span>
-          </li>;
+          return (
+            <li key={v.title}>
+              <span>{v.title}</span> — <span>{v.viewCount}</span>
+            </li>
+          );
         })}
       </ul>
     </>

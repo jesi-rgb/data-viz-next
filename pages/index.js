@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [tweets, setTweets] = useState();
+  //   const [tweets, setTweets] = useState();
   const [youtubeData, setYoutubeData] = useState();
 
   //   useEffect(() => {
