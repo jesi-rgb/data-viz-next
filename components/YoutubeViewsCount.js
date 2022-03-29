@@ -10,13 +10,15 @@ export default function YoutubeViewsCount(videoData) {
   }
 
   let outputData = [];
+  let formatter = Intl.NumberFormat("en", { notation: "compact" });
+
   console.log(videoData.data.items[0]);
   videoData.data.items.map((v) => {
     outputData.push({
       title: v.snippet.title,
       date: v.snippet.publishedAt,
       id: v.id,
-      viewCount: v.statistics.viewCount,
+      viewCount: formatter.format(v.statistics.viewCount),
       likeCount: v.statistics.likeCount,
       commentCount: v.statistics.commentCount,
     });

@@ -40,7 +40,7 @@ const CalendarHeatMap = ({ data }) => {
       right: 30,
       cellSize: ["auto", 13],
 
-      range: [new Date(2021, 11), new Date(2022, 12)],
+      range: [new Date(2021, 8), new Date(2022, 12)],
       itemStyle: {
         borderWidth: 0.5,
       },

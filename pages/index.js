@@ -4,10 +4,11 @@ import YoutubeViewsCount from "@/components/YoutubeViewsCount";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
+import BarChartVideos from "@/components/BarChartVideos";
+import BarChartRecharts from "@/components/BarChartRecharts";
 
 export default function Home() {
   //   const [tweets, setTweets] = useState();
-  const [youtubeData, setYoutubeData] = useState();
 
   //   useEffect(() => {
   //     const getData = async () => {
@@ -20,6 +21,7 @@ export default function Home() {
   //     getData();
   //   }, []);
 
+  const [youtubeData, setYoutubeData] = useState();
   useEffect(() => {
     const getData = async () => {
       const response = await fetch("/api/yt-video-plays");
@@ -32,9 +34,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="">
       <Layout>
-        {youtubeData && <YoutubeViewsCount data={youtubeData} />}
+        {/* {youtubeData && <YoutubeViewsCount data={youtubeData} />} */}
+        {/* {youtubeData && <BarChartVideos data={youtubeData} />} */}
+        {youtubeData && <BarChartRecharts data={youtubeData} />}
 
         {/* {tweets && <CalendarHeatMap data={tweets} />} */}
       </Layout>
