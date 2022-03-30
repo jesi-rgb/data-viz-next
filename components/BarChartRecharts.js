@@ -18,7 +18,7 @@ export default function BarChartRecharts(videoData) {
   videoData.data.items.map((v) => {
     outputData.push({
       title: v.snippet.title,
-      truncatedTitle: [...v.snippet.title].slice(0, 6).join("") + "...",
+      truncatedTitle: [...v.snippet.title].slice(0, 10).join("") + "...",
       id: v.id,
       viewCount: v.statistics.viewCount,
     });
@@ -34,7 +34,7 @@ export default function BarChartRecharts(videoData) {
       data={outputData}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="truncatedTitle" angle={-45} padding={{ top: 100 }} />
+      <XAxis dataKey="title" angle={-45} padding={{ top: 100 }} />
       <YAxis />
       <Tooltip content={<CustomTooltip />} />
       <Bar dataKey="viewCount" fill="#8884d8" />

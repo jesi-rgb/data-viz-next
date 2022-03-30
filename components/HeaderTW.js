@@ -21,34 +21,30 @@ export const HeaderTW = () => {
               </a>
             </Link>
           </div>
-          {/* title */}
-          {/* <div className="hidden text-white text-2xl font-bold hover:text-accent-1-lighter transition-colors md:visible md:flex md:justify-center md:w-1/3">
-            <a href="/">Thinking thoughts</a>
-          </div> */}
 
           {/* navigators */}
           <div className="absolute right-0 flex md:flex-auto text-sm space-x-2 xl:space-x-4 font-medium justify-end md:text-lg w-1/2 md:w-1/3">
             <a
               href="/blog"
-              className="text-white hover:text-accent-1-lighter transition-colors"
+              className="hover:text-accent-1-lighter transition-colors"
             >
               Blog
             </a>
             <a
               href="/portfolio"
-              className="text-white hover:text-accent-1-lighter transition-colors"
+              className="hover:text-accent-1-lighter transition-colors"
             >
               Portfolio
             </a>
             <a
               href="/curriculum"
-              className="text-white hover:text-accent-1-lighter transition-colors"
+              className="hover:text-accent-1-lighter transition-colors"
             >
               Curriculum
             </a>
             <a
               href="/about"
-              className="text-white hover:text-accent-1-lighter transition-colors"
+              className="hover:text-accent-1-lighter transition-colors"
             >
               About
             </a>

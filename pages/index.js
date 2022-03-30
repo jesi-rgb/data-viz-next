@@ -36,9 +36,12 @@ export default function Home() {
   return (
     <div className="">
       <Layout>
-        {/* {youtubeData && <YoutubeViewsCount data={youtubeData} />} */}
+        <h1 className="mb-10 text-7xl font-bold">
+          A list of all Reducible videos
+        </h1>
+        {youtubeData && <YoutubeViewsCount data={youtubeData} />}
         {/* {youtubeData && <BarChartVideos data={youtubeData} />} */}
-        {youtubeData && <BarChartRecharts data={youtubeData} />}
+        {/* {youtubeData && <BarChartRecharts data={youtubeData} />} */}
 
         {/* {tweets && <CalendarHeatMap data={tweets} />} */}
       </Layout>
